@@ -1,5 +1,5 @@
 package com.example.demo.common;
 
-public class Person {
+public record Person () {
 
 }

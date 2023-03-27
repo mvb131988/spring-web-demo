@@ -12,7 +12,7 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
 
-@Configuration
+//@Configuration
 public class Initializer implements ServletContextInitializer {
 
     @Override
