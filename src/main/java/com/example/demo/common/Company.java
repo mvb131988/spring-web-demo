@@ -15,6 +15,7 @@ public record Company(
     @JsonProperty("IsWhiteListed") Boolean isWhiteListed,
     
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy HH:mm:ss")
+    //@JsonDeserialize(using = StringToLocalDateTimeDeserializer.class)
     @JsonProperty("RegistrationTime") 
     LocalDateTime registrationTime) {
 

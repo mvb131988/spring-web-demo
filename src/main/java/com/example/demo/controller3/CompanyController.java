@@ -44,6 +44,18 @@ public class CompanyController {
                                 LocalDateTime.now());
         return ResponseEntity.ok().body(c);
     }
+    
+    @GetMapping("/app3/company")
+    public ResponseEntity<?> getCompanyByDate(@RequestParam LocalDateTime time) {
+        //null value: serialization config
+        Company c = new Company("company1", 
+                new BigInteger("300000007228142"), 
+                ChannelType.PHONE, 
+                UUID.fromString("74edef69-3ae3-4cf9-ae16-a2e6a2ddc698"), 
+                true,
+                null);
+        return ResponseEntity.ok().body(c);
+    }
 
     @PostMapping("/app3/company/")
     public ResponseEntity<?> saveCompany(@RequestBody Company c) {
