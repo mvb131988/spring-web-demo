@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.UnsupportedMediaTypeStatusException;
 
 import com.example.demo.common.ChannelType;
 import com.example.demo.common.Company;
@@ -84,6 +85,24 @@ public class CompanyController {
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+    
+    @GetMapping("/app3/error/{errorcode}")
+    public ResponseEntity<Company> getCompany(@PathVariable("errorcode") Integer errorCode) {
+        
+        if(errorCode == 1) {
+            throw new UnsupportedMediaTypeStatusException("UnsupportedMediaTypeStatusException");
+        }
+        
+        if(errorCode == 2) {
+            throw new IllegalArgumentException("IllegalArgumentException");
+        }
+        
+        if(errorCode == 3) {
+            throw new RuntimeException("RuntimeException");
+        }
+        
+        return ResponseEntity.ok().build();
     }
     
 }
