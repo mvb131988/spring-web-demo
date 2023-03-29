@@ -1,0 +1,5 @@
+https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-servlet
+(WebApplicationInitializer example of standalone tomcat applciation
++
+webapp example)
+https://stackoverflow.com/questions/4238809/example-of-multipart-form-data
